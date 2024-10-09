@@ -1,12 +1,19 @@
 import imageHarryPotter from './img/harry-potter.png';
 import './App.css';
+import {useState} from "react";
 
 function App() {
+  const [fimls, setFilms] = useState(null);
+
   const reqApi = async() => {
     const api = await fetch ("https://potterhead-api.vercel.app/api/movies")
     const filmApi = await api.json();
     console.log(filmApi);
-  }
+    setFilms(filmApi.results);
+  };
+
+  console.log(fimls);
+  
   return (
     <div className="App">
       <header className="App-header">
