@@ -1,16 +1,22 @@
-export default function Films(props){
-    const {films} = props;
-   return (
-    <div className = "characters">
-        <h1>Peliculas</h1>
-        <span className="back-home">Volver a pantalla principal</span>
-        <div className="vontainer-characters">
-            {films.map((film, index) => (
-                <div className="character-containes" key={index}>
-                    <p>{film.title}</p>
-                </div>
-            ))}
-        </div>
+import React from 'react';
+
+export default function Films(props) {
+  const { films, goBackHome } = props; // Recibir la función goBackHome
+
+  return (
+    <div className="characters">
+      <h1>Films</h1>
+      <span className="back-home" onClick={goBackHome}>Back to Home</span> {/* Añadir onClick */}
+      <div className="container-characters">
+        {films.map((film, index) => (
+          <div className="character-container" key={index}>
+            <div>
+              <h2>{film.title}</h2>
+              <p className="summary-text">{film.summary}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-   ) 
+  );
 }

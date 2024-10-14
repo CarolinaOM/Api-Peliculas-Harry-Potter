@@ -126,6 +126,20 @@ body {
   font-size: 15px;
 }
 
+.character-container p {
+  font-size: 17px;
+  margin: 5px 0;
+  /* Elimina la alineación centrada para que no afecte a otros textos */
+  /* text-align: center; */
+}
+
+/* Ya tienes esta clase, pero asegurémonos de que funcione correctamente */
+.summary-text {
+  text-align: justify; /* Texto justificado */
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+ 
 @media (max-width: 768px) {
   .characters {
     padding: 0 20px;
@@ -145,5 +159,5 @@ body {
 
   .character-container img {
     width: 150px;
-  }
+  } 
 }
